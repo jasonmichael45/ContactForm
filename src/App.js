@@ -41,7 +41,7 @@ function handleSubmit(e){
     return;
   }
 
-  axios.post('/submit', {
+  axios.post('/submitForm', {
     name: name_input,
     email: email_input,
     message: message_input
