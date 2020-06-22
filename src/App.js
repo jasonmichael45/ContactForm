@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -15,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function handleSubmit(){
-
+  console.log("submitted")
 }
 
 function Form() {
@@ -55,7 +58,7 @@ function Form() {
           id="standard-multiline-static"
           label="Required"
           multiline
-          rows={4}
+          rows={6}
           style={{ margin: 8 }}
           helperText="Message"
           margin="normal"
@@ -67,8 +70,14 @@ function Form() {
 
         />
       </div>
+      <Button
+        type="submit"
+        variant="outlined"
 
-    
+      >
+        Submit
+        
+      </Button>
     </form>
   );
 }
@@ -76,6 +85,7 @@ function Form() {
 function App() {
   return (
     <div className="App">
+      <Typography>Contact Form</Typography>
       <Form/>
     </div>
   );
