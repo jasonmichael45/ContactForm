@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
@@ -17,11 +16,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 function handleSubmit(e){
   e.preventDefault()
 
-    // States/props would be better here, but struggled to integrate Material-UI with class components
+  // States/props would be ideal, but struggled to integrate Material-UI with class components
   var name_input = document.getElementsByTagName("input")[0].value
   var email_input = document.getElementsByTagName("input")[1].value
   var message_input = document.getElementsByTagName("textarea")[0].value
@@ -43,8 +41,6 @@ function handleSubmit(e){
     return;
   }
 
-
-
   axios.post('/submit', {
     name: name_input,
     email: email_input,
@@ -55,11 +51,8 @@ function handleSubmit(e){
   })
   .catch(function (error) {
     alert(error)
-
   });
-
 }
-
 
 function Form() {
   const classes = useStyles();
